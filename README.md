@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+## My Firefox
 
-You can use the [editor on GitHub](https://github.com/jsenlas/Firefox_config/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+I use Firefox with certain modifications, here are some of them.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Hiding tab bar
 
-### Markdown
+I use [Tree Style Tab](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/) extension to organise tabs vertically on the left/right side of the browser window. The issue with this is that then I am stuck with original tab bar and the Tree Style Tab in the sidebar... 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+So how to hide the tab bar:
+1. go to ```about:config```
+2. set ```toolkit.legacyUserProfileCustomizations.stylesheets``` to ```true```
+3. go to Firefox directory ```/home/user/.mozilla/firefox/##hash##.profile_name/``` 
+4. create folder with name ```chrome```
+5. in the ```chrome``` folder create file ```userChrome.css```
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jsenlas/Firefox_config/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+````
+ 
