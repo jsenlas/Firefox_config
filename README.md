@@ -1,6 +1,4 @@
-## My Firefox
-
-I use Firefox with certain modifications, here are some of them.
+## Firefox
 
 ## Hiding tab bar
 
@@ -11,7 +9,7 @@ So how to hide the tab bar:
 2. set ```toolkit.legacyUserProfileCustomizations.stylesheets``` to ```true```
 3. go to Firefox directory ```/home/user/.mozilla/firefox/##hash##.profile_name/``` 
 4. create folder with name ```chrome```
-5. in the ```chrome``` folder create file ```userChrome.css```
+5. in the ```chrome``` folder create file ```userChrome.css``` 
 
 ```
 #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
@@ -23,3 +21,8 @@ So how to hide the tab bar:
 }
 ````
  
+## Accessing simple HTTP sites (taken from [here](https://support.mozilla.org/en-US/questions/959914))
+
+	1. In a new tab, type or paste about:config in the address bar and press Enter. Click the button promising to be careful.
+	2. In the filter box, type or paste autofill and pause while the list is filtered
+	3. Double-click browser.urlbar.autoFill to toggle it from true to false. 
